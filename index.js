@@ -15,6 +15,8 @@ let canvasUpdate = null;
 document.getElementById("get-local-stream").onclick = function() {
     obj.getLocalStream().then( (stream) => {
         const video = document.createElement('video');
+        video.setAttribute("data-for-hv-lib", true);
+        video.setAttribute("playsinline", true);
         video.srcObject = stream;
         video.muted = true;
         video.height = "240";
